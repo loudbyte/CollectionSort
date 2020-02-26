@@ -1,6 +1,7 @@
 package com.epam.oranization.emploee;
 
-public abstract class Emploee implements EmploeeAction, Comparable<Emploee> {
+public abstract class Emploee {
+
     private String name;
     private int id;
     private int salary;
@@ -8,11 +9,6 @@ public abstract class Emploee implements EmploeeAction, Comparable<Emploee> {
     @Override
     public String toString() {
         return name;
-    }
-
-    @Override
-    public int compareTo(Emploee o) {
-        return this.id - o.id;
     }
 
     public void setName(String name) {
@@ -27,19 +23,15 @@ public abstract class Emploee implements EmploeeAction, Comparable<Emploee> {
         this.salary = salary;
     }
 
-    @Override
     public String getName() {
         return name;
     }
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
     public int getSalary() {
         return salary;
     }
-
 }

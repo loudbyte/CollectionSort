@@ -19,9 +19,6 @@ public class Manager extends Emploee {
         this.setId(id);
         this.setSalary(salary);
         this.setManage(manage);
-
-
-
     }
 
     List<Emploee> emploees = new ArrayList<>();
@@ -37,6 +34,4 @@ public class Manager extends Emploee {
     public List<Emploee> getEmploees(){
         return emploees;
     }
-
-
 }

@@ -15,5 +15,4 @@ public class CompareEmploeeById implements Comparator<Emploee> {
     public boolean equals(Object obj) {
         return false;
     }
-
 }

@@ -1,12 +1,7 @@
 package com.epam.oranization;
 
-import com.epam.oranization.emploee.Emploee;
-import com.epam.oranization.emploee.Intern;
-import com.epam.oranization.emploee.Manager;
-import com.epam.oranization.emploee.Programmer;
-import com.epam.oranization.process.sort.CompareEmploeeById;
-import com.epam.oranization.process.sort.CompareEmploeeByName;
-import com.epam.oranization.process.sort.CompareEmploeeBySalary;
+import com.epam.oranization.emploee.*;
+import com.epam.oranization.process.sort.*;
 
 import java.util.Collections;
 
@@ -28,6 +23,7 @@ public class App {
         Intern intern2 = new Intern("Federico", 2, 60000, 2, "Java", 17);
         Intern intern3 = new Intern("John", 3, 45000, 1, "C#", 8);
         Intern intern4 = new Intern("Ros", 4, 55000, 2, "Java", 15);
+        Intern intern5 = new Intern("Ben", 5, 55000, 2, "C#", 14);
 
         manager1.addEmploee(programmer1);
         manager1.addEmploee(programmer2);
@@ -58,20 +54,31 @@ public class App {
         programmer1.addIntern(intern2);
         programmer1.addIntern(intern3);
         programmer1.addIntern(intern4);
-
-        System.out.println("------ Sorted by ID ------");
-        Collections.sort(programmer1.getInterns(), new CompareEmploeeById());
-        for (Intern e : programmer1.getInterns())
-            System.out.println(e.getId() + " " + e.getName() + " " + e.getSalary());
+        programmer1.addIntern(intern5);
 
         System.out.println("------ Sorted by Name ------");
         Collections.sort(manager1.getEmploees(), new CompareEmploeeByName());
         for (Emploee e : manager1.getEmploees())
             System.out.println(e.getId() + " " + e.getName() + " " + e.getSalary());
 
+        System.out.println("------ Sorted by ID ------");
+        Collections.sort(manager2.getEmploees(), new CompareEmploeeById());
+        for (Intern e : programmer1.getInterns())
+            System.out.println(e.getId() + " " + e.getName() + " " + e.getSalary());
+
         System.out.println("------ Sorted by Salary ------");
         Collections.sort(manager3.getEmploees(), new CompareEmploeeBySalary());
         for (Emploee e : manager3.getEmploees())
             System.out.println(e.getId() + " " + e.getName() + " " + e.getSalary());
+
+        System.out.println("------ Sorted by TechSkill ------");
+        Collections.sort(programmer1.getInterns(), new CompareEngineerByTechSkill());
+        for (Engineer e : programmer1.getInterns())
+            System.out.println(e.getId() + " " + e.getName() + "  techSkill: " + e.getTechSkillLevel());
+
+        System.out.println("------ Sorted by Programming Language ------");
+        Collections.sort(programmer1.getInterns(), new CompareEngineerByProgrammingLanguage());
+        for (Programmer e : programmer1.getInterns())
+            System.out.println(e.getId() + " " + e.getName() + " " + e.getProgrammingLanguage());
     }
 }

@@ -22,7 +22,6 @@ public class Programmer extends Engineer {
         this.setProgrammingLanguage(language);
     }
 
-
     List<Intern> interns = new ArrayList<>();
 
     public void addIntern(Intern e) { interns.add(e);
@@ -35,6 +34,4 @@ public class Programmer extends Engineer {
     public List<Intern> getInterns(){
         return interns;
     }
-
-
 }
